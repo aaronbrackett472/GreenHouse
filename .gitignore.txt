@@ -1,0 +1,8 @@
+$ cat .gitignore
+
+
+Library/
+.vs/
+obj/
+Packages/
+Temp/
