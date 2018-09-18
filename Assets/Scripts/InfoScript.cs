@@ -8,7 +8,13 @@ public class InfoScript : MonoBehaviour {
     public List<string> descriptions;
     public List<int> difficulties;
     private int numGames = 3;
+
     public int activeDifficulty = 0;
+    public int MatchDiff = 0;
+    public int LightDiff = 0;
+    public int ShowerDiff = 0;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -38,5 +44,27 @@ public class InfoScript : MonoBehaviour {
         {
             difficulties.Add(0);
         }
+    }
+
+    public int completed()
+    {
+        return MatchDiff + LightDiff + ShowerDiff;
+    }
+
+    public int maxDiff(int game)
+    {
+        if (game == 0)
+        {
+            return MatchDiff+1;
+        }
+        if (game == 1)
+        {
+            return ShowerDiff+1;
+        }
+        if (game == 2)
+        {
+            return LightDiff+1;
+        }
+        return 1;
     }
 }

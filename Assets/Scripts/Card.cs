@@ -47,6 +47,26 @@ public class Card : MonoBehaviour{
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         }
+        if (type == 5)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
+        }
+        if (type == 6)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
+        }
+        if (type == 7)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.gray;
+        }
+        if (type == 8)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+        if (type == 9)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
 
     }
 

@@ -94,6 +94,10 @@ public class ShowerGameScript : MonoBehaviour {
         {
             win.enabled = true;
             nextDiffButton.enabled = true;
+            if (info.activeDifficulty > info.ShowerDiff)
+            {
+                info.ShowerDiff = info.activeDifficulty;
+            }            
             Destroy(this);
         }
 	}

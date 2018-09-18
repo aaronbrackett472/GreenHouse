@@ -144,6 +144,10 @@ public class MatchGameLogic : MonoBehaviour {
                         nextDiffButton.enabled = false;
                     }
                     buttons.SetActive(true);
+                    if (info.activeDifficulty > info.MatchDiff)
+                    {
+                        info.MatchDiff = info.activeDifficulty;
+                    }
                     Destroy(this);
                 }
             }

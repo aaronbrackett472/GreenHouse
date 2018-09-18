@@ -14,10 +14,13 @@ public class HubScript : MonoBehaviour {
     public Button back;
     public Slider difficulty;
 
+    private int maxDiff;
+
     // Use this for initialization
     void Start () {
         startScreen.enabled = false;
         back.onClick.AddListener(delegate { startScreen.enabled = false; });
+        info = FindObjectOfType<InfoScript>();
 	}
 	
 	// Update is called once per frame
@@ -50,7 +53,17 @@ public class HubScript : MonoBehaviour {
         gameName.text = info.gameNames[game];
         gameDescription.text = info.descriptions[game];
         start.onClick.AddListener(delegate { startGame(game + 1); });
+        maxDiff = info.maxDiff(game);
+        difficulty.value = maxDiff;
         startScreen.enabled = true;
+    }
+
+    public void sliderChange()
+    {
+        if (difficulty.value >= maxDiff)
+        {
+            difficulty.value = maxDiff;
+        }
     }
 
     private void startGame(int sceneIndex)

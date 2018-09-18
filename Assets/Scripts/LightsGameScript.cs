@@ -110,6 +110,10 @@ public class LightsGameScript : MonoBehaviour {
                             nextDiffButton.enabled = false;
                         }
                         buttons.SetActive(true);
+                        if (info.activeDifficulty > info.LightDiff)
+                        {
+                            info.LightDiff = info.activeDifficulty;
+                        }                        
                         Destroy(this);
                     }
                 }
